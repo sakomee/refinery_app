@@ -78,6 +78,7 @@ GEM
     paper_trail (2.7.1)
       activerecord (~> 3.0)
       railties (~> 3.0)
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -192,6 +193,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails (~> 2.0.0)
+  pg (= 0.12.2)
   rails (= 3.2.12)
   refinerycms (~> 2.0.0)
   refinerycms-blog (~> 2.0.0)

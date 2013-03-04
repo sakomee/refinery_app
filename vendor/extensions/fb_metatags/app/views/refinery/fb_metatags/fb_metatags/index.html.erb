@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="fb_metatags">
+    <% @fb_metatags.each do |fb_metatag| %>
+      <li>
+        <%= link_to fb_metatag.model_name, refinery.fb_metatags_fb_metatag_path(fb_metatag) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

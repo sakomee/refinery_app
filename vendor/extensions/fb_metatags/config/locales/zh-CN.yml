@@ -1,0 +1,36 @@
+zh-CN:
+  refinery:
+    plugins:
+      fb_metatags:
+        title: Fb Metatags
+    fb_metatags:
+      admin:
+        fb_metatags:
+          actions:
+            create_new: 建立新的 Fb Metatag
+            reorder: 对 Fb Metatags 重新排序
+            reorder_done: 对 Fb Metatags 的重新排序结束
+          records:
+            title: Fb Metatags
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Fb Metatags yet. Click "Add New Fb Metatag" to add your first fb metatag.
+            no_items_yet: 目前没有 Fb Metatags . 点击 "Add New Fb Metatag" 创建一个fb metatag.
+          fb_metatag:
+            view_live_html: 查看 fb metatag 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 fb metatag
+            delete: 永久删除 fb metatag
+      fb_metatags:
+        show:
+          other: 其他 Fb Metatags
+  activerecord:
+    attributes:
+      'refinery/fb_metatags/fb_metatag':
+        model_name: Model Name
+        og_title: Og Title
+        og_type: Og Type
+        og_url: Og Url
+        og_image: Og Image
+        og_site_name: Og Site Name
+        og_description: Og Description
+        fb_app_id: Fb App

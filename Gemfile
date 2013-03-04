@@ -51,3 +51,5 @@ gem 'refinerycms-blog', '~> 2.0.0'
 group :production do
   gem 'pg', '0.12.2'
 end
+
+gem 'refinerycms-fb_metatags', :path => 'vendor/extensions'

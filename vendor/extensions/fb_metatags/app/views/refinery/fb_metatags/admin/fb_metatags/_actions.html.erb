@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::FbMetatags::Admin::FbMetatagsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.fb_metatags_admin_fb_metatags_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_fb_metatags_admin_fb_metatag_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::FbMetatags::Admin::FbMetatagsController.sortable? && ::Refinery::FbMetatags::FbMetatag.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Fb Metatags"),
+                 refinery.fb_metatags_admin_fb_metatags_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Fb Metatags"),
+                 refinery.fb_metatags_admin_fb_metatags_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

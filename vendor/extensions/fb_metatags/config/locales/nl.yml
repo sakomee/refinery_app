@@ -1,0 +1,34 @@
+nl:
+  refinery:
+    plugins:
+      fb_metatags:
+        title: Fb Metatags
+    fb_metatags:
+      admin:
+        fb_metatags:
+          actions:
+            create_new: Maak een nieuwe Fb Metatag
+            reorder: Wijzig de volgorde van de Fb Metatags
+            reorder_done: Klaar met het wijzingen van de volgorde van de Fb Metatags
+          records:
+            title: Fb Metatags
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Fb Metatags. Druk op 'Maak een nieuwe Fb Metatag' om de eerste aan te maken.
+          fb_metatag:
+            view_live_html: Bekijk deze fb metatag op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze fb metatag
+            delete: Verwijder deze fb metatag voor eeuwig
+      fb_metatags:
+        show:
+          other: Andere Fb Metatags
+  activerecord:
+    attributes:
+      'refinery/fb_metatags/fb_metatag':
+        model_name: Model Name
+        og_title: Og Title
+        og_type: Og Type
+        og_url: Og Url
+        og_image: Og Image
+        og_site_name: Og Site Name
+        og_description: Og Description
+        fb_app_id: Fb App

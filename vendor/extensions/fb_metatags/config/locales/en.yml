@@ -1,0 +1,34 @@
+en:
+  refinery:
+    plugins:
+      fb_metatags:
+        title: Fb Metatags
+    fb_metatags:
+      admin:
+        fb_metatags:
+          actions:
+            create_new: Add New Fb Metatag
+            reorder: Reorder Fb Metatags
+            reorder_done: Done Reordering Fb Metatags
+          records:
+            title: Fb Metatags
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Fb Metatags yet. Click "Add New Fb Metatag" to add your first fb metatag.
+          fb_metatag:
+            view_live_html: View this fb metatag live <br/><em>(opens in a new window)</em>
+            edit: Edit this fb metatag
+            delete: Remove this fb metatag forever
+      fb_metatags:
+        show:
+          other: Other Fb Metatags
+  activerecord:
+    attributes:
+      'refinery/fb_metatags/fb_metatag':
+        model_name: Model Name
+        og_title: Og Title
+        og_type: Og Type
+        og_url: Og Url
+        og_image: Og Image
+        og_site_name: Og Site Name
+        og_description: Og Description
+        fb_app_id: Fb App

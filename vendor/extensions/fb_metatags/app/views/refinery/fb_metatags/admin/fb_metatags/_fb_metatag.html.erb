@@ -1,0 +1,20 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(fb_metatag) -%>">
+  <span class='title'>
+    <%= fb_metatag.model_name %>
+
+  </span>
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.fb_metatags_fb_metatag_path(fb_metatag),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_fb_metatags_admin_fb_metatag_path(fb_metatag),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.fb_metatags_admin_fb_metatag_path(fb_metatag),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => fb_metatag.model_name),
+        :method => :delete %>
+  </span>
+</li>

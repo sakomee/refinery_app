@@ -1,0 +1,34 @@
+nb:
+  refinery:
+    plugins:
+      fb_metatags:
+        title: Fb Metatags
+    fb_metatags:
+      admin:
+        fb_metatags:
+          actions:
+            create_new: Lag en ny Fb Metatag
+            reorder: Endre rekkefølgen på Fb Metatags
+            reorder_done: Ferdig å endre rekkefølgen Fb Metatags
+          records:
+            title: Fb Metatags
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Fb Metatags enda. Klikk på "Lag en ny Fb Metatag" for å legge til din første fb metatag.
+          fb_metatag:
+            view_live_html: Vis hvordan denne fb metatag ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne fb metatag
+            delete: Fjern denne fb metatag permanent
+      fb_metatags:
+        show:
+          other: Andre Fb Metatags
+  activerecord:
+    attributes:
+      'refinery/fb_metatags/fb_metatag':
+        model_name: Model Name
+        og_title: Og Title
+        og_type: Og Type
+        og_url: Og Url
+        og_image: Og Image
+        og_site_name: Og Site Name
+        og_description: Og Description
+        fb_app_id: Fb App

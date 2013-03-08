@@ -2,14 +2,16 @@ class CreateFbMetatagsFbMetatags < ActiveRecord::Migration
 
   def up
     create_table :refinery_fb_metatags do |t|
+      #t.string :og_url
+      #t.string :og_site_name
       t.string :model_name
       t.string :og_title
       t.string :og_type
-      t.string :og_url
+      t.text   :og_description
       t.integer :og_image_id
-      t.string :og_site_name
-      t.text :og_description
-      t.string :fb_app_id
+      t.string :article_tag, default: " "
+      t.string :article_author, default: "Admin"
+      t.string :og_attribute, default: "og_title,og_type,og_description,article_tag,article_author"
       t.integer :position
 
       t.timestamps

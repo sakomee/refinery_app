@@ -19,16 +19,16 @@ module Refinery
     source_root File.expand_path('../../../../', __FILE__)
     
     def Copy_files
-      copy_file 'app/views/refinery/blog/admin/posts/_form.html.erb'  
-      copy_file 'app/views/refinery/_head.html.erb'  
-      copy_file 'app/views/shared/_fb_metatag.html.erb' 
-      copy_file 'app/views/_head_fb_metatag.html.erb'
-      copy_file 'app/models/fb_metatag_observer.rb'  
+      #copy_file 'app/views/refinery/blog/admin/posts/_form.html.erb'  
+      #copy_file 'app/views/refinery/_head.html.erb'  
+      #copy_file 'app/views/shared/_fb_metatag.html.erb' 
+      #copy_file 'app/views/_head_fb_metatag.html.erb'
+      #copy_file 'app/models/fb_metatag_observer.rb'  
     end
 
     def create_initializer_file
-      puts "  Updating active_record.observers in application.rb"
-      application "config.active_record.observers = :fb_metatag_observer"
+      # puts "  Updating active_record.observers in application.rb"
+      # application "config.active_record.observers = :fb_metatag_observer"
     end
   end
 end

@@ -11,18 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304130357) do
-
-  create_table "fb_meta_data", :force => true do |t|
-    t.string   "og_title"
-    t.string   "og_type"
-    t.string   "og_url"
-    t.string   "og_image"
-    t.string   "fb_app_id"
-    t.integer  "post_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130308090457) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -30,10 +19,6 @@ ActiveRecord::Schema.define(:version => 20130304130357) do
     t.datetime "updated_at",  :null => false
     t.string   "cached_slug"
     t.string   "slug"
-    t.string   "og_image"
-    t.string   "og_title"
-    t.string   "og_type"
-    t.string   "og_url"
   end
 
   add_index "refinery_blog_categories", ["id"], :name => "index_refinery_blog_categories_on_id"
@@ -55,10 +40,6 @@ ActiveRecord::Schema.define(:version => 20130304130357) do
     t.string   "state"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "og_image"
-    t.string   "og_title"
-    t.string   "og_type"
-    t.string   "og_url"
   end
 
   add_index "refinery_blog_comments", ["id"], :name => "index_refinery_blog_comments_on_id"
@@ -78,10 +59,6 @@ ActiveRecord::Schema.define(:version => 20130304130357) do
     t.string   "source_url_title"
     t.integer  "access_count",     :default => 0
     t.string   "slug"
-    t.string   "og_image"
-    t.string   "og_title"
-    t.string   "og_type"
-    t.string   "og_url"
   end
 
   add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
@@ -92,14 +69,14 @@ ActiveRecord::Schema.define(:version => 20130304130357) do
     t.string   "model_name"
     t.string   "og_title"
     t.string   "og_type"
-    t.string   "og_url"
-    t.integer  "og_image_id"
-    t.string   "og_site_name"
     t.text     "og_description"
-    t.string   "fb_app_id"
+    t.integer  "og_image_id"
+    t.string   "article_tag",    :default => " "
+    t.string   "article_author", :default => "Admin"
+    t.string   "og_attribute",   :default => "og_title,og_type,og_description,article_tag,article_author"
     t.integer  "position"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                                                                               :null => false
+    t.datetime "updated_at",                                                                               :null => false
   end
 
   create_table "refinery_images", :force => true do |t|
@@ -168,10 +145,6 @@ ActiveRecord::Schema.define(:version => 20130304130357) do
     t.string   "layout_template"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "og_image"
-    t.string   "og_title"
-    t.string   "og_type"
-    t.string   "og_url"
   end
 
   add_index "refinery_pages", ["depth"], :name => "index_refinery_pages_on_depth"

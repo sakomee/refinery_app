@@ -1,56 +1,34 @@
-<%= form_for [refinery, :fb_metatags_admin, @fb_metatag] do |f| -%>
+<%= nested_form_for [refinery, :fb_metatags_admin, @fb_metatag] do |f| -%>
   <%= render '/refinery/admin/error_messages',
               :object => @fb_metatag,
               :include_object_name => true %>
 
-  
+   <h2>Facebook Meta tag setting Default mode</h2> 
   <div class='field'>
     <%= f.label :model_name -%>
-    <%= f.text_field :model_name, :class => 'larger widest'  -%>
+    <%= f.text_field :model_name -%>
 
   </div>
-  
-  <div class='field'>
-    <%= f.label :og_title -%>
+
+
+<div class='field'>
+    <%= f.label 'Default Title' -%>
     <%= f.text_field :og_title  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :og_type -%>
+    <%= f.label 'Default Type' -%>
     <%= f.text_field :og_type  -%>
 
   </div>
-  
-  <div class='field'>
-    <%= f.label :og_url -%>
-    <%= f.text_field :og_url  -%>
-
-  </div>
-  
-  <div class='field'>
-    <%= f.label :og_image -%>
-    <%= render '/refinery/admin/image_picker',
-               :f => f,
-               :field => :og_image_id,
-               :image => @fb_metatag.og_image,
-               :toggle_image_display => false %>
-
-  </div>
-  
-  <div class='field'>
-    <%= f.label :og_site_name -%>
-    <%= f.text_field :og_site_name  -%>
-
-  </div>
-  
 
   <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
         <% [:og_description].each_with_index do |part, part_index| %>
           <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
-            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/fb_metatags/fb_metatag", :default => part.to_s.titleize), "##{part}" %>
+            <%= link_to  t("Description", :scope => "activerecord.attributes.refinery/fb_metatags/fb_metatag"), "##{part}" %>
           </li>
         <% end %>
       </ul>
@@ -64,12 +42,36 @@
     </div>
 
   </div>
-  
+  <h2>Facebook Meta tag setting for view mode</h2>
+   
   <div class='field'>
-    <%= f.label :fb_app_id -%>
-    <%= f.text_field :fb_app_id  -%>
+    <%= f.label 'Default image' -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :og_image_id,
+               :image => @fb_metatag.og_image,
+               :toggle_image_display => false %>
 
   </div>
+
+  <div class='field'>
+    <%= f.label "Default Tag field" -%>
+    <%= f.text_field :article_tag  -%></br>
+    (field of the model can be used. i.e. : @post.taggs)
+  </div> 
+  
+  <div class='field'>
+    <%= f.label "Default auther field " -%>
+    <%= f.text_field :article_author  -%></br>
+    (field of the model can be used. i.e. : @post.author)
+  </div>
+
+ <div class='field'>
+    <%= f.label "Attributes to include" -%>
+     <%= f.text_field :og_attribute  -%>
+   
+  </div>
+
   
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,

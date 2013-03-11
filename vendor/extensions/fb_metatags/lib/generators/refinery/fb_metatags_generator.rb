@@ -2,7 +2,7 @@ module Refinery
   class FbMetatagsGenerator < Rails::Generators::Base
 
     def rake_db
-      rake("refinery_fb_metatags:install:migrations")
+      result=rake("refinery_fb_metatags:install:migrations")
     end
 
     def append_load_seed_data
@@ -19,16 +19,11 @@ module Refinery
     source_root File.expand_path('../../../../', __FILE__)
     
     def Copy_files
-      #copy_file 'app/views/refinery/blog/admin/posts/_form.html.erb'  
-      #copy_file 'app/views/refinery/_head.html.erb'  
-      #copy_file 'app/views/shared/_fb_metatag.html.erb' 
-      #copy_file 'app/views/_head_fb_metatag.html.erb'
-      #copy_file 'app/models/fb_metatag_observer.rb'  
-    end
-
-    def create_initializer_file
-      # puts "  Updating active_record.observers in application.rb"
-      # application "config.active_record.observers = :fb_metatag_observer"
+      copy_file 'app/views/refinery/blog/admin/posts/_form.html.erb'  
+      copy_file 'app/views/refinery/_head.html.erb'  
+      copy_file 'app/views/shared/_fb_metatag.html.erb' 
+      copy_file 'app/views/_head_fb_metatag.html.erb'
+      copy_file 'app/decorators/models/shared/metatag_decorator.rb' 
     end
   end
 end

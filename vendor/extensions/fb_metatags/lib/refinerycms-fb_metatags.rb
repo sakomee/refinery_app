@@ -4,8 +4,7 @@ module Fb_Metatag
     # attributes=open graph properties that we want to add
     # option= option to generate migration. i.e. add OR remove  
     # 
-	  def self.add_fb_metatag(model_name, attributes)
-        Fb_Metatag.add_properties_to_model(model_name, attributes)
+	def self.add_fb_metatag(model_name, attributes)
         model_name.gsub! /\//, '_'
         attributes=attributes.split(',')
         migration_name="add_og_properties_to_"+model_name
@@ -21,13 +20,6 @@ module Fb_Metatag
         Fb_Metatag.run_migration(migration_return, :up)
     end  
 
-    #Add attributes to models 
-	def self.add_properties_to_model(model, attributes)  
-       model.gsub! /_/, '/'
-	   model.camelize.constantize.class_eval do   
-            attr_accessible "#{attributes}"	 	
-       end
-	end 
 
     #Migration generators for models which require facebook metadata   
     def self.generate_migration(migration_name, attributes)        
@@ -43,5 +35,6 @@ module Fb_Metatag
            require "#{migration_return.last}"           
            migration_return.first.camelize.constantize.migrate("#{change}")
         end
-    end   
+    end 
+
 end

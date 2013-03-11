@@ -16,7 +16,6 @@ module Refinery
             :class_name => :'refinery/fb_metatags/fb_metatag',
             :title => 'model_name'
           }
-          
         end
       end
 
@@ -24,7 +23,7 @@ module Refinery
         Refinery.register_extension(Refinery::FbMetatags)        
       end
 
-      config.to_prepare do 
+      config.to_prepare do  
         Refinery::FbMetatags::Admin::FbMetatagsController.class_eval do
           before_filter :generate_fb_metatags, :only => [:create, :update, :destroy ]
           def generate_fb_metatags              

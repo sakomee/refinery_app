@@ -1,0 +1,18 @@
+ <p>
+ 	<%= link_to "facebook options", "#",
+ 	:id => 'tggle_advanced_options',
+ 	:title => t('.toggle_advanced_options') %>
+ </p>
+ <div id='facebook_options_field'>
+ 	<%= f.label 'Title' %> 
+ 	<%= f.text_field :og_title %>
+ 	<%= f.label 'Type' %> 
+ 	<%= f.text_field :og_type %>
+ 	<%= f.label 'Description' %> 
+ 	<%= f.text_field :og_description %>
+ 	<%= f.label 'Image' %> Comming Soon ...
+ 	<%= f.label 'Author' %> 
+ 	<%= f.text_field :article_author %>
+ 	<%= f.label 'Tags' %> 
+ 	<%= f.text_field :article_tag %>
+ </div>

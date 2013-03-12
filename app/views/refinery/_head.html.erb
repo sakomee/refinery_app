@@ -4,19 +4,9 @@
   <title><%= browser_title(yield(:title)) %></title>
   <%= raw %(<meta name="description" content="#{@meta.meta_description}" />) if @meta.meta_description.present? -%>
   <%= raw %(<meta name="keywords" content="#{@meta.meta_keywords}">) if @meta.meta_keywords.present? -%>
-  <%= raw %(<link rel="canonical" content="#{@canonical}" />) if @canonical.present? -%>
-  <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
-  <%= yield :meta %>
-
-  <%= stylesheet_link_tag "application", "formatting", "theme" %>
-  <%= stylesheet_link_tag "home" if home_page? %>
-  <%= yield :stylesheets %>
-
-  <%= render '/refinery/google_analytics' %>
-  <%= array=(params[:controller]).split('/') %>
-  <%= model_name = (array.last).singularize.downcase %>
-  <%= @params= instance_variable_get("@#{model_name}") %>
-
+  <% array=(params[:controller]).split('/') %>
+  <% model_name = (array.last).singularize.downcase %>
+  <% @params= instance_variable_get("@#{model_name}") %>
   <% if (params[:action]=="show") %>
   <%= raw "<meta property=\"og:title\" content=\"#{@params.og_title}\"/>" %>
   <%= raw "<meta property=\"og:description\" content=\"#{@params.og_description}\"/>" %>
@@ -36,6 +26,13 @@
   <meta itemprop="description" content="" />
   <meta itemprop="image" content="http://www.iwa.fi/images/logo.png" />
   <% end %>
+  <%= raw %(<link rel="canonical" content="#{@canonical}" />) if @canonical.present? -%>
+  <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
+  <%= yield :meta %>
 
+  <%= stylesheet_link_tag "application", "formatting", "theme" %>
+  <%= stylesheet_link_tag "home" if home_page? %>
+  <%= yield :stylesheets %>
+  <%= render '/refinery/google_analytics' %>
   <%= javascript_include_tag 'modernizr-min' %>
 </head>

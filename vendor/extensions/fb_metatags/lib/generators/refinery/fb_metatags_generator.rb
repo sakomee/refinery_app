@@ -19,8 +19,7 @@ module Refinery
     source_root File.expand_path('../../../../', __FILE__)
     
     def Copy_files
-      copy_file 'app/views/refinery/blog/admin/posts/_form.html.erb'  
-      copy_file 'app/views/refinery/_head.html.erb'  
+      copy_file 'app/views/refinery/blog/admin/posts/_form.html.erb' 
       copy_file 'app/views/shared/_fb_metatag.html.erb' 
       copy_file 'app/views/_head_fb_metatag.html.erb'
       copy_file 'app/decorators/models/shared/metatag_decorator.rb' 

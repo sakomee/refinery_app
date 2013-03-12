@@ -21,36 +21,15 @@
       <%=raw @fb_metatag.og_type %>
     </p>
   </section>
-  <section>
-    <h1>Og Url</h1>
-    <p>
-      <%=raw @fb_metatag.og_url %>
-    </p>
-  </section>
-  <section>
-    <h1>Og Image</h1>
-    <p>
-      <%= image_fu @fb_metatag.og_image, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Og Site Name</h1>
-    <p>
-      <%=raw @fb_metatag.og_site_name %>
-    </p>
-  </section>
+
+  
   <section>
     <h1>Og Description</h1>
     <p>
       <%=raw @fb_metatag.og_description %>
     </p>
   </section>
-  <section>
-    <h1>Fb App</h1>
-    <p>
-      <%=raw @fb_metatag.fb_app_id %>
-    </p>
-  </section>
+  
 <% end %>
 
 <% content_for :side_body do %>

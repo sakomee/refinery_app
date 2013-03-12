@@ -1,8 +1,6 @@
-<%= array=(params[:controller]).split('/') %>
-
-
-<%= model_name = (array.last).singularize.downcase %>
-<%= @params= instance_variable_get("@#{model_name}") %>
+<% array=(params[:controller]).split('/') %>
+<% model_name = (array.last).singularize.downcase %>
+<% @params= instance_variable_get("@#{model_name}") %>
 
 <% if (params[:action]=="show") %>
 	<%= raw "<meta property=\"og:title\" content=\"#{@params.og_title}\"/>" %>
